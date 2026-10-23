@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>softframe · story templates</title>
+<meta name="description" content="Drop in a photo, pick a pastel frame, download it for your Instagram story. Free and unlimited.">
+<meta name="theme-color" content="#fbf6ef">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Young+Serif&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>softframe</h1>
+    <p>Pick a frame, add your photo, post it to your story.</p>
+  </header>
+
+  <section class="stage">
+    <div class="canvas-wrap" id="canvasWrap">
+      <canvas id="canvas" width="1080" height="1920" aria-label="Story preview"></canvas>
+      <button class="pick-overlay" id="pickOverlay" type="button">Choose a photo</button>
+    </div>
+  </section>
+
+  <section class="picker" aria-label="Templates">
+    <div class="thumbs" id="thumbs" role="radiogroup"></div>
+  </section>
+
+  <section class="controls" id="controls" hidden>
+    <label class="row">
+      <span>Zoom</span>
+      <input type="range" id="zoom" min="1" max="3" step="0.01" value="1">
+    </label>
+    <label class="row">
+      <span>Caption</span>
+      <input type="text" id="caption" maxlength="40" placeholder="optional, e.g. soft season">
+    </label>
+    <p class="hint">Drag the photo to reposition it.</p>
+  </section>
+
+  <section class="actions">
+    <button type="button" class="ghost" id="changePhoto" hidden>Change photo</button>
+    <button type="button" class="primary" id="download" disabled>Download</button>
+    <button type="button" class="ghost" id="share" disabled hidden>Share</button>
+  </section>
+
+  <input type="file" id="file" accept="image/*" hidden>
+  <p class="foot">Your photo never leaves your phone. Everything happens in your browser.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
